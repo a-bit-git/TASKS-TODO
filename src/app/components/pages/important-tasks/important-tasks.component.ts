@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
+import { LocalStorageService } from '../../../services/local-storage.service';
 import { PageTitleComponent } from '../../page-title/page-title.component';
 import { TaskListComponent } from '../../task-list/task-list.component';
-import { LocalStorageService } from '../../../services/local-storage.service';
 
 @Component({
   selector: 'app-important-task',
@@ -35,6 +35,12 @@ export class ImportantTaskComponent {
     this.localStorageService.updateTask(task);
     this.getAllTasks();
   }
+
+  onDelete(taskId: number) {
+    this.localStorageService.deleteTask(taskId);
+    this.getAllTasks();
+  }
+  
 }
 
 // Important task . ts

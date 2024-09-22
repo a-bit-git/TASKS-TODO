@@ -60,7 +60,7 @@ export class AllTaskComponent {
     this.getAllTasks();
   }
 
-  onDelete(taskId: any) {
+  onDelete(taskId: number) {
     this.localStorageService.deleteTask(taskId);
     this.getAllTasks();
   }

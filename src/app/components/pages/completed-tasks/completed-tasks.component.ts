@@ -35,6 +35,11 @@ export class CompletedTaskComponent {
     this.localStorageService.updateTask(task);
     this.getAllTasks();
   }
+
+  onDelete(taskId: number) {
+    this.localStorageService.deleteTask(taskId);
+    this.getAllTasks();
+  }
 }
 
 // Complete task .ts
